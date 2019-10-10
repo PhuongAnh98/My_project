@@ -1,7 +1,7 @@
 export default {
   items: [
     {
-      name: 'Dashboard',
+      name: 'Manage',
       url: '/dashboard',
       icon: 'icon-speedometer',
       badge: {
@@ -9,33 +9,33 @@ export default {
         text: 'NEW',
       },
     },
-    {
-      name: "Quản lý",
-      url: '/manage',
-      icon: 'fa fa-gears',
-      children: [
-        {
-          name: 'Post',
-          url: '/manage/post',
-          icon: 'fa fa-newspaper-o'
-        },
-        {
-          name: 'Influencers',
-          url: '/manage/influencers',
-          icon: '',
-        },
-        {
-          name: "Trending",
-          url: '/manage/trending',
-          icon: ''
-        },
-        {
-          name: 'Sentiment',
-          url: '/manage/sentiment',
-          icon: 'fa fa-heart-o'
-        }
-      ]
-    },
+    // {
+    //   name: "Quản lý",
+    //   url: '/manage',
+    //   icon: 'fa fa-gears',
+    //   children: [
+    //     {
+    //       name: 'Post',
+    //       url: '/manage/post',
+    //       icon: 'fa fa-newspaper-o'
+    //     },
+    //     {
+    //       name: 'Influencers',
+    //       url: '/manage/influencers',
+    //       icon: '',
+    //     },
+    //     {
+    //       name: "Trending",
+    //       url: '/manage/trending',
+    //       icon: ''
+    //     },
+    //     {
+    //       name: 'Sentiment',
+    //       url: '/manage/sentiment',
+    //       icon: 'fa fa-heart-o'
+    //     }
+    //   ]
+    // },
     
     // {
     //   title: true,
@@ -64,21 +64,21 @@ export default {
     //   name: 'Extras',
     // },
 
-    {
-      name: 'Download CoreUI',
-      url: 'https://coreui.io/react/',
-      icon: 'icon-cloud-download',
-      class: 'mt-auto',
-      variant: 'success',
-      attributes: { target: '_blank', rel: "noopener" },
-    },
-    {
-      name: 'Try CoreUI PRO',
-      url: 'https://coreui.io/pro/react/',
-      icon: 'icon-layers',
-      variant: 'danger',
-      attributes: { target: '_blank', rel: "noopener" },
-    },
+    // {
+    //   name: 'Download CoreUI',
+    //   url: 'https://coreui.io/react/',
+    //   icon: 'icon-cloud-download',
+    //   class: 'mt-auto',
+    //   variant: 'success',
+    //   attributes: { target: '_blank', rel: "noopener" },
+    // },
+    // {
+    //   name: 'Try CoreUI PRO',
+    //   url: 'https://coreui.io/pro/react/',
+    //   icon: 'icon-layers',
+    //   variant: 'danger',
+    //   attributes: { target: '_blank', rel: "noopener" },
+    // },
     
   ],
 };

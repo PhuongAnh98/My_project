@@ -22,7 +22,7 @@ const Cards = React.lazy(() => import('./views/Base/Cards'));
 // const ButtonGroups = React.lazy(() => import('./views/Buttons/ButtonGroups'));
 // const Buttons = React.lazy(() => import('./views/Buttons/Buttons'));
 // const Charts = React.lazy(() => import('./views/Charts'));
-const Dashboard = React.lazy(() => import('./views/Dashboard'));
+const Manage = React.lazy(() => import('./views/Dashboard'));
 const Post = React.lazy(() => import('./views/Manages/Post'));
 const Influencers = React.lazy(()=>import('./views/Manages/Influencers'));
 const Sentiment =React.lazy(()=>import ('./views/Manages/Sentiment'));
@@ -44,12 +44,12 @@ const User = React.lazy(() => import('./views/Users/User'));
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
   { path: '/', exact: true, name: 'Home' },
-  { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+  { path: '/dashboard', name: 'Manage', component: Manage},
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   //{ path: '/theme/colors', name: 'Colors', component: Colors },
  // { path: '/theme/typography', name: 'Typography', component: Typography },
   { path: '/base', exact: true, name: 'Base', component: Cards },
-  { path: '/manage', exact: true,  name: 'Manages', component: Post },
+ // { path: '/manage', exact: true,  name: 'Manages', component: Post },
   { path: '/manage/post', exact: true,  name: 'Post', component: Post },
   { path: '/manage/influencers', exact: true, name: 'Influencers', component:Influencers },
   { path: '/manage/trending', exact: true, name: 'Trending', component: Trending },
