@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import LoginService from './LoginService';
 
 class Login extends Component {
+  _loginService = new LoginService();
+
   constructor(props) {
     super(props);
 
@@ -13,10 +16,33 @@ class Login extends Component {
   }
 
   login() {
-    if (this.state.username === "admin" && this.state.password === "admin") {
-      this.props.history.push('/')
-      localStorage.setItem('logged', "true");
+    const data = {
+      "UserName": this.state.username,
+      "Password": this.state.password
     }
+    this._loginService.login(data)
+   
+      .then((result) => {
+        if (result.Message === "Success" && result.Data.Result === true) {
+          
+            localStorage.setItem('username', this.state.username);
+            this.props.history.push('/')
+          
+        } else if (result.Message === "Success" && result.Data.Result === false) {
+          alert("Account is NOT exist. Check your Username and Password")
+        }
+      }).catch((err) => {
+        console.log("error: " + err);
+      });
+      // if (this.state.username === "admin" && this.state.password === "admin") {
+      //   this.props.history.push('/manage/lesson')
+      //   localStorage.setItem('username', this.state.username);
+      // } else if (this.state.username === "test" && this.state.password === "test") {
+      //   this.props.history.push('/')
+      //   localStorage.setItem('username', this.state.username);
+      // } else {
+      //   alert("Account is NOT exist. Check your Username and Password")
+      // }
   }
 
   getUsername(event) {
@@ -62,9 +88,9 @@ class Login extends Component {
                         <Col xs="6">
                           <Button color="primary" className="px-4" onClick={this.login.bind(this)}>Login</Button>
                         </Col>
-                        <Col xs="6" className="text-right">
+                        {/* <Col xs="6" className="text-right">
                           <Button color="link" className="px-0">Forgot password?</Button>
-                        </Col>
+                        </Col> */}
                       </Row>
                     </Form>
                   </CardBody>
